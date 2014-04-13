@@ -1,0 +1,70 @@
+BootPress Child Theme Starter Kit
+=================================
+
+This is the starter kit for any theme to be built on [BootPress][bootpress]. 
+You don't have to use this child theme to work with BootPress, but it makes 
+your life a little easier if you do.
+
+
+Documentation
+-------------
+
+For documentation, check out [the wiki][wiki].
+
+
+Issues
+------
+
+To view or report issues, please use [the issue tracker][issues].
+
+Before you submit the issue, please search to make sure it doesn't already exist.
+
+
+Changelog
+---------
+
+### 1.0.0
+
+* Initial release
+
+
+Versioning
+----------
+
+For transparency and insight into our release cycle, and for striving to maintain backward compatibility, this theme will be maintained under the Semantic Versioning guidelines as much as possible.
+
+Releases will be numbered with the following format:
+
+`<major>.<minor>.<patch>`
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+For more information on SemVer, please visit [http://semver.org/](http://semver.org/).
+
+
+Authors
+-------
+
+**Jason Lengstorf**
+
++ [http://twitter.com/jlengstorf](http://twitter.com/jlengstorf)
++ [http://github.com/jlengstorf](http://github.com/jlengstorf)
+
+**Alex Newman**
+
++ [http://twitter.com/thedotmack](http://twitter.com/thedotmack)
++ [http://github.com/thedotmack](http://github.com/thedotmack)
+
+
+Copyright and License
+---------------------
+
+Copyright 2014 Copter Labs, Inc.
+
+[bootpress]: http://github.com/copterlabs/bootpress
+[wiki]: https://github.com/copterlabs/bootpress-child/wiki
+[issues]: https://github.com/copterlabs/bootpress-child/issues
