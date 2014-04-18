@@ -1,8 +1,4 @@
-/*!
- * Custom scripts for the theme
- * ----------------------------
- * Developed by Copter Labs <http://www.copterlabs.com/>
- */
+/*! This theme rides a Hoverboard (http://gethoverboard.com/) */
 jQuery(function($){
 
     /*
