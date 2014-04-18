@@ -1,8 +1,8 @@
-BootPress Child Theme Starter Kit
-=================================
+Hoverboard Child Theme Starter Kit
+==================================
 
-This is the starter kit for any theme to be built on [BootPress][bootpress]. 
-You don't have to use this child theme to work with BootPress, but it makes 
+This is the starter kit for any theme to be built on [Hoverboard][hoverboard]. 
+You don't have to use this child theme to work with Hoverboard, but it makes 
 your life a little easier if you do.
 
 
@@ -65,6 +65,6 @@ Copyright and License
 
 Copyright 2014 Copter Labs, Inc.
 
-[bootpress]: http://github.com/copterlabs/bootpress
-[wiki]: https://github.com/copterlabs/bootpress-child/wiki
-[issues]: https://github.com/copterlabs/bootpress-child/issues
+[hoverboard]: http://github.com/copterlabs/hoverboard
+[wiki]: https://github.com/copterlabs/hoverboard-child/wiki
+[issues]: https://github.com/copterlabs/hoverboard-child/issues
