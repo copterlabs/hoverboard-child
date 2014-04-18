@@ -23,6 +23,16 @@ Before you submit the issue, please search to make sure it doesn't already exist
 Changelog
 ---------
 
+### 1.0.1
+
+* Updated `package.json` with devDependencies, moved some dependencies to dev
+* Added grunt-todo for tracking todos during development
+* Added grunt-tinypng for compressing PNGs automatically
+* Added grunt-jshint to avoid JS issues
+* Added grunt-autoprefixer for handling CSS prefixes on the fly
+* Minor tweaks to `main.js`
+* Updated `.gitignore` to skip `file_sigs.json` and `todo.md`
+
 ### 1.0.0
 
 * Initial release
