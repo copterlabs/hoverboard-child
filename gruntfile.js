@@ -15,6 +15,9 @@ module.exports = function(grunt) {
                 }
             }
         },
+        jshint: {
+            all: ['Gruntfile.js', 'assets/js/main.js']
+        },
         less: {
             style: {
                 options: {
@@ -25,10 +28,40 @@ module.exports = function(grunt) {
                 }
             }
         },
+        autoprefixer: {
+            main: {
+                src: 'assets/css/main.min.css'
+            },
+        },
+        todo: {
+            options: {
+                file: "todo.md"
+            },
+            src: [
+                '*.php',
+                'assets/js/*.js',
+                'assets/less/*.less'
+            ],
+        },
+        tinypng: {
+            options: {
+                apiKey: 'MPqFa8MhQ6QqXjOXOsHumeVHsI3sWv2U',
+                checkSigs: true,
+                sigFile: 'assets/images/file_sigs.json',
+                summarize: true,
+                showProgress: true
+            },
+            compress: {
+                src: '*.png',
+                cwd: 'assets/images/',
+                dest: 'assets/images/',
+                expand: true
+            }
+        },
         watch: {
             js: {
                 files: ['assets/js/*.js'],
-                tasks: ['uglify:js'],
+                tasks: ['uglify:js', 'jshint:all'],
                 options: {
                     livereload: true,
                 }
@@ -37,10 +70,24 @@ module.exports = function(grunt) {
                 files: [
                     'assets/less/*.less',
                 ],
-                tasks: ['less:style'],
+                tasks: ['less:style', 'autoprefixer:main'],
                 options: {
                     livereload: true,
                 }
+            },
+            all: {
+                files: [
+                    '*.php',
+                    'assets/js/*.js',
+                    'assets/less/*.less',
+                ],
+                tasks: ['todo']
+            },
+            png: {
+                files: [
+                    'assets/images/*.png'
+                ],
+                tasks: ['tinypng']
             }
         }
     });
@@ -49,4 +96,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-notify');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-todo');
+    grunt.loadNpmTasks('grunt-tinypng');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 };
