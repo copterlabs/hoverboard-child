@@ -1,14 +1,24 @@
 {
   "name": "hoverboard-child",
-  "version": "0.1.0",
+  "version": "1.0.1",
+  "author": "Copter Labs <info@copterlabs.com> (http://copterlabs.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/copterlabs/hoverboard-child"
+  },
   "dependencies": {
-    "grunt-cli": "latest",
+    "grunt-cli": "latest"
+  },
+  "devDependencies": {
     "grunt-contrib-concat": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-less": "latest",
-    "grunt-contrib-watch": "latest"
-  },
-  "devDependencies": {
-    "grunt-notify": "~0.2.17"
+    "grunt-contrib-watch": "latest",
+    "grunt-notify": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-todo": "latest",
+    "grunt-tinypng": "latest",
+    "grunt-contrib-jshint": "latest"
   }
 }
