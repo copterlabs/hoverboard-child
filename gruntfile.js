@@ -43,6 +43,9 @@ module.exports = function(grunt) {
                 'assets/less/*.less'
             ],
         },
+
+        // To use TinyPNG, get an API key from https://tinypng.com/developers
+        // Don't forget to uncomment the task at the bottom of this file
         tinypng: {
             options: {
                 apiKey: 'YOUR_API_KEY_HERE',
@@ -98,6 +101,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-todo');
-    grunt.loadNpmTasks('grunt-tinypng');
+    // grunt.loadNpmTasks('grunt-tinypng');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 };
