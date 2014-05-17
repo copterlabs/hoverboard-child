@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         },
         tinypng: {
             options: {
-                apiKey: 'MPqFa8MhQ6QqXjOXOsHumeVHsI3sWv2U',
+                apiKey: 'YOUR_API_KEY_HERE',
                 checkSigs: true,
                 sigFile: 'assets/images/file_sigs.json',
                 summarize: true,
