@@ -1,13 +1,15 @@
 module.exports = function(grunt) {
- 
-    grunt.registerTask('watch', [ 'watch' ]);
+
+    // Dynamically loads all required grunt tasks
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
    
     grunt.initConfig({
         uglify: {
             options: {
                 mangle: true,
                 compress: true,
-                preserveComments: 'some'
+                preserveComments: 'some',
+                sourceMap: true,
             },
             js: {
                 files: {
@@ -22,6 +24,9 @@ module.exports = function(grunt) {
             style: {
                 options: {
                     cleancss: true,
+                    sourceMap: true,
+                    sourceMapFilename: 'assets/css/main.min.css.map',
+                    sourceMapRootpath: '/wp-content/themes/pn_encyclopedia/'
                 },
                 files: {
                     'assets/css/main.min.css': 'assets/less/main.less',
@@ -30,7 +35,10 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             main: {
-                src: 'assets/css/main.min.css'
+                src: 'assets/css/main.min.css',
+                options: {
+                    map: true,
+                }
             },
         },
         todo: {
@@ -45,7 +53,6 @@ module.exports = function(grunt) {
         },
 
         // To use TinyPNG, get an API key from https://tinypng.com/developers
-        // Don't forget to uncomment the task at the bottom of this file
         tinypng: {
             options: {
                 apiKey: 'YOUR_API_KEY_HERE',
@@ -63,44 +70,58 @@ module.exports = function(grunt) {
         },
         watch: {
             js: {
-                files: ['assets/js/*.js'],
-                tasks: ['uglify:js', 'jshint:all'],
+                files: [ 'assets/js/*.js' ],
+                tasks: [ 'uglify:js', 'jshint:all' ],
                 options: {
                     livereload: true,
                 }
             },
             css: {
-                files: [
-                    'assets/less/*.less',
-                ],
-                tasks: ['less:style', 'autoprefixer:main'],
+                files: [ 'assets/less/*.less' ],
+                tasks: [ 'less:style', 'autoprefixer:main' ],
                 options: {
                     livereload: true,
                 }
             },
-            all: {
-                files: [
-                    '*.php',
-                    'assets/js/*.js',
-                    'assets/less/*.less',
-                ],
-                tasks: ['todo']
-            },
             png: {
-                files: [
-                    'assets/images/*.png'
-                ],
-                tasks: ['tinypng']
+                files: [ 'assets/images/*.png' ],
+                tasks: [ 'tinypng' ]
+            },
+            php: {
+                files: [ '*.php' ],
+                options: {
+                    livereload: true,
+                }
             }
-        }
+        },
+        php: {
+            server: {
+                options: {
+                    base: '../../..',
+                    hostname: 'localhost',
+                    port: 5000,
+                    keepalive: true
+                }
+            }
+        },
+        concurrent: {
+          dev: {
+            tasks: [ 'php:server', 'watch' ],
+            options: {
+              logConcurrentOutput: true
+            }
+          }
+        },
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-todo');
-    // grunt.loadNpmTasks('grunt-tinypng');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    // Compiles LESS/JS and checks for todos
+    grunt.registerTask('default', [
+        'less',
+        'autoprefixer',
+        'jshint',
+        'uglify',
+        'todo'
+    ]);
+
+    grunt.registerTask( 'server', [ 'concurrent' ]);
 };
