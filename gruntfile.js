@@ -25,8 +25,7 @@ module.exports = function(grunt) {
                 options: {
                     cleancss: true,
                     sourceMap: true,
-                    sourceMapFilename: 'assets/css/main.min.css.map',
-                    sourceMapRootpath: '/wp-content/themes/pn_encyclopedia/'
+                    sourceMapFilename: 'assets/css/main.min.css.map'
                 },
                 files: {
                     'assets/css/main.min.css': 'assets/less/main.less',
