@@ -1,3 +1,6 @@
+// Gets the theme root
+var theme_root = '/wp-content/themes/' + __dirname.split('/').pop();
+
 module.exports = function(grunt) {
 
     // Dynamically loads all required grunt tasks
@@ -21,12 +24,17 @@ module.exports = function(grunt) {
             all: ['Gruntfile.js', 'assets/js/main.js']
         },
         less: {
+            options: {
+                compress: true,
+                yuicompress: true,
+                optimization: 2,
+                sourceMap: true,
+                sourceMapURL: theme_root + '/assets/css/main.min.css.map',
+                sourceMapFilename: 'assets/css/main.min.css.map',
+                sourceMapBasepath: 'assets/css/',
+                sourceMapRootpath: theme_root
+            },
             style: {
-                options: {
-                    cleancss: true,
-                    sourceMap: true,
-                    sourceMapFilename: 'assets/css/main.min.css.map'
-                },
                 files: {
                     'assets/css/main.min.css': 'assets/less/main.less',
                 }
@@ -35,9 +43,6 @@ module.exports = function(grunt) {
         autoprefixer: {
             main: {
                 src: 'assets/css/main.min.css',
-                options: {
-                    map: true,
-                }
             },
         },
         todo: {
