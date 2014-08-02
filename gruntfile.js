@@ -28,11 +28,11 @@ module.exports = function(grunt) {
                 compress: true,
                 yuicompress: true,
                 optimization: 2,
-                sourceMap: true,
-                sourceMapURL: theme_root + '/assets/css/main.min.css.map',
-                sourceMapFilename: 'assets/css/main.min.css.map',
-                sourceMapBasepath: 'assets/css/',
-                sourceMapRootpath: theme_root
+                // sourceMap: true,
+                // sourceMapURL: theme_root + '/assets/css/main.min.css.map',
+                // sourceMapFilename: 'assets/css/main.min.css.map',
+                // sourceMapBasepath: 'assets/css/',
+                // sourceMapRootpath: theme_root
             },
             style: {
                 files: {
@@ -102,9 +102,10 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     base: '../../..',
-                    hostname: 'localhost',
+                    hostname: '127.0.0.1',
                     port: 5000,
-                    keepalive: true
+                    keepalive: true,
+                    open: true
                 }
             }
         },
