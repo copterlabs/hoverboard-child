@@ -1,6 +1,6 @@
 {
   "name": "hoverboard-child-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     "Copter Labs <info@copterlabs.com>"
   ],
@@ -18,6 +18,6 @@
     "tests"
   ],
   "dependencies": {
-    "hoverboard-analytics": "copterlabs/hoverboard-analytics#1.0.0"
+    "tgm-plugin-activation": "thomasgriffin/TGM-Plugin-Activation"
   }
 }
