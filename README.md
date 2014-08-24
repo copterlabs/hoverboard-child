@@ -23,6 +23,10 @@ Before you submit the issue, please search to make sure it doesn't already exist
 Changelog
 ---------
 
+### 1.1.0
+
+* Added TGM-Plugin-Activation for requiring WordPress plugins
+
 ### 1.0.3
 
 * Improvements to the Grunt workflow
