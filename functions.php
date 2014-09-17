@@ -41,7 +41,7 @@ function hb_setup_theme(  ) {
 
     // Requires (and allows quick install/activation) of plugin dependencies
     $path = THEME_PATH 
-          . '/includes/tgm-plugin-activation/class-tgm-plugin-activation.php';
+          . '/bower_components/tgm-plugin-activation/class-tgm-plugin-activation.php';
     if (file_exists($path)) {
         require_once $path;
         add_action('tgmpa_register', 'hb_register_required_plugins');
