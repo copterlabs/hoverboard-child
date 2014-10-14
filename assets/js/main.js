@@ -13,7 +13,7 @@ jQuery(function($){
      * CUSTOM THEME JS
      *************************************************************************/
     if (size == 'desktop') {
-        $('.hero-box>img').parallaxHw(0, 0.4);
+        $('.hero-box>img').parallaxHw(0, -.4);
     }
 
 });
