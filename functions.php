@@ -116,9 +116,9 @@ function hb_enqueue_assets(  ) {
 function hb_register_required_plugins(  ) {
     $plugins = array(
         array(
-            // 'name' => 'Advanced Custom Fields',
-            // 'slug' => 'advanced-custom-fields',
-            // 'required' => TRUE,
+            'name' => 'Advanced Custom Fields',
+            'slug' => 'advanced-custom-fields',
+            'required' => TRUE,
         ),
     );
 
