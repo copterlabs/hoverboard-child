@@ -5,14 +5,6 @@ get_header();
 ?>
 
 <div class="hero-box">
-    <div class="as-seen-in container">
-        <div class="row">
-            <img src="<?= ASSETS_DIR ?>/images/as-seen-in-01.png" alt="">
-            <img src="<?= ASSETS_DIR ?>/images/as-seen-in-02.png" alt="">
-            <img src="<?= ASSETS_DIR ?>/images/as-seen-in-03.png" alt="">
-            <img src="<?= ASSETS_DIR ?>/images/as-seen-in-04.png" alt="">
-        </div>
-    </div>
     <div class="main-cta container">
         <div class="row">
             <!-- <div class="col-sm-7">
@@ -31,7 +23,7 @@ get_header();
 <div class="cta-banners container">
     <div class="row">
         <div class="banner">
-            <!-- <h2><a href="#banner-link">Private Client Program</a></h2> -->
+            <h2><a href="#banner-link">Private Client Program</a></h2>
             <a href="#banner-link">
                 <img src="<?= ASSETS_DIR ?>/images/temp-banner-01.jpg" alt="">
             </a>
@@ -41,7 +33,7 @@ get_header();
             </p>
         </div>
         <div class="banner">
-            <!-- <h2><a href="#banner-link">SureFit&trade; Fitness Training</a></h2> -->
+            <h2><a href="#banner-link">SureFit&trade; Fitness Training</a></h2>
             <a href="#banner-link">
                 <img src="<?= ASSETS_DIR ?>/images/temp-banner-02.jpg" alt="">
             </a>
@@ -51,7 +43,7 @@ get_header();
             </p>
         </div>
         <div class="banner">
-            <!-- <h2><a href="#banner-link">Fitness Guaranteed&trade;</a></h2> -->
+            <h2><a href="#banner-link">Fitness Guaranteed&trade;</a></h2>
             <a href="#banner-link">
                 <img src="<?= ASSETS_DIR ?>/images/temp-banner-03.jpg" alt="">
             </a>
@@ -60,6 +52,15 @@ get_header();
                 <a href="#banner-link" class="read-more">Learn more</a>
             </p>
         </div>
+    </div>
+</div>
+
+<div class="as-seen-in container">
+    <div class="row">
+        <img src="<?= ASSETS_DIR ?>/images/as-seen-in-01.png" alt="">
+        <img src="<?= ASSETS_DIR ?>/images/as-seen-in-02.png" alt="">
+        <img src="<?= ASSETS_DIR ?>/images/as-seen-in-03.png" alt="">
+        <img src="<?= ASSETS_DIR ?>/images/as-seen-in-04.png" alt="">
     </div>
 </div>
 
