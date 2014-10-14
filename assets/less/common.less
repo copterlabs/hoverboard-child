@@ -1,0 +1,42 @@
+// Typography
+em,i {
+    font-family:'Proxima N W01 Light It';
+
+    strong,b {
+        font-family:'Proxima N W01 Bold It';
+    }
+}
+
+strong,b {
+    font-family:'Proxima N W01 Bold';
+
+    em,i {
+        font-family:'Proxima N W01 Bold It';
+    }
+}
+
+.btn {
+    font-family: @headings-font-family;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.btn-success {
+    color: @gray-darker;
+
+    &:hover,&:active,&:focus {
+        color: @gray-darker;
+        background-color: darken(@brand-success, 3%);
+    }
+}
+
+.read-more {
+    font-size: @font-size-base*.5;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    &:after {
+        content: ' \f105';
+        font-family: 'FontAwesome';
+    }
+}
