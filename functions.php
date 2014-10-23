@@ -116,6 +116,7 @@ function hb_enqueue_assets(  ) {
 /**
  * Adds a reminder to install required plugins
  * @return void
+ * @since  1.1.0
  */
 function hb_register_required_plugins(  ) {
     $plugins = array(
