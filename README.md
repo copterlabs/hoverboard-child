@@ -23,6 +23,12 @@ Before you submit the issue, please search to make sure it doesn't already exist
 Changelog
 ---------
 
+### 1.1.1
+
+* Improved TGM plugin requirements to be more relevant
+* Updated Bootstrap to the latest version
+* Cleaned up the `Gruntfile.js`
+
 ### 1.1.0
 
 * Added TGM-Plugin-Activation for requiring WordPress plugins
