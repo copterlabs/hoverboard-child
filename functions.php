@@ -113,19 +113,39 @@ function hb_enqueue_assets(  ) {
     }
 }
 
+/**
+ * Adds a reminder to install required plugins
+ * @return void
+ */
 function hb_register_required_plugins(  ) {
     $plugins = array(
         array(
-            // 'name' => 'Advanced Custom Fields',
-            // 'slug' => 'advanced-custom-fields',
-            // 'required' => TRUE,
+            'name' => 'WordPress SEO',
+            'slug' => 'wordpress-seo',
+            'required' => FALSE,
+        ),
+        array(
+            'name' => 'Gravity Forms',
+            'slug' => 'gravityforms',
+            'source' => 'http://s3.copterlabs.com/inc/gravityforms.zip',
+            'external_url' => 'http://www.gravityforms.com/',
+            'force_activation' => FALSE,
+            'required' => FALSE,
+        ),
+        array(
+            'name' => 'Advanced Custom Fields Pro',
+            'slug' => 'advanced-custom-fields-pro',
+            'source' => 'http://s3.copterlabs.com/inc/advanced-custom-fields-pro.zip',
+            'external_url' => 'http://www.advancedcustomfields.com/',
+            'force_activation' => TRUE,
+            'required' => TRUE,
         ),
     );
 
     $config = array(
         'default_path' => '',
         'menu'         => 'tgmpa-install-plugins',
-        'has_notices'  => true,
+        'has_notices'  => TRUE,
         'dismissable'  => FALSE,
         'dismiss_msg'  => '',
         'is_automatic' => TRUE,
