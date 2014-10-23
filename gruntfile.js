@@ -37,6 +37,7 @@ module.exports = function(grunt) {
             style: {
                 files: {
                     'assets/css/main.min.css': 'assets/less/main.less',
+                    'assets/css/ie.css': 'assets/less/ie.less',
                 }
             }
         },
@@ -44,16 +45,6 @@ module.exports = function(grunt) {
             main: {
                 src: 'assets/css/main.min.css',
             },
-        },
-        todo: {
-            options: {
-                file: "todo.md"
-            },
-            src: [
-                '*.php',
-                'assets/js/*.js',
-                'assets/less/*.less'
-            ],
         },
 
         // To use TinyPNG, get an API key from https://tinypng.com/developers
@@ -124,8 +115,7 @@ module.exports = function(grunt) {
         'less',
         'autoprefixer',
         'jshint',
-        'uglify',
-        'todo'
+        'uglify'
     ]);
 
     grunt.registerTask( 'server', [ 'concurrent' ]);
