@@ -53,8 +53,8 @@ module.exports = function(grunt) {
                 ],
                 options: {
                     exclude: [ 
-                        "includes/jquery",
-                        "includes/bootstrap",
+                        "includes/jquery/",
+                        "includes/bootstrap/",
                         "includes/tgm-plugin-activation" 
                     ],
                     fileTypes: {
