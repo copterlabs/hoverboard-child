@@ -68,12 +68,12 @@ module.exports = function(grunt) {
                                 js: function(filePath){
                                     var fileName = filePath.substring(filePath.lastIndexOf('/')+1);
                                     var wpHandle = fileName.replace(".","-");
-                                    return "wp_enqueue_script('"+wpHandle+"',get_stylesheet_directory_uri() . '/"+filePath+"');";
+                                    return "wp_enqueue_script('"+wpHandle+"', get_stylesheet_directory_uri() . '/"+filePath+"');";
                                 },
                                 css: function(filePath){
                                     var fileName = filePath.substring(filePath.lastIndexOf('/')+1);
                                     var wpHandle = fileName.replace(".","-");
-                                    return "wp_enqueue_style('"+wpHandle+"',get_stylesheet_directory_uri() . '/"+filePath+"');";
+                                    return "wp_enqueue_style('"+wpHandle+"', get_stylesheet_directory_uri() . '/"+filePath+"');";
                                 }
                             }
                         }
