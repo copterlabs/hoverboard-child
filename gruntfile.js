@@ -46,6 +46,41 @@ module.exports = function(grunt) {
                 src: 'assets/css/main.min.css',
             },
         },
+        wiredep: {
+            task: {
+                src: [
+                    'functions.php'
+                ],
+                options: {
+                    exclude: [ 
+                        "includes/jquery/",
+                        "includes/bootstrap/",
+                        "includes/tgm-plugin-activation" 
+                    ],
+                    fileTypes: {
+                        php: {
+                            block: /(([ \t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+                            detect: {
+                                js: /script\(.*src=['"]([^'"]+)/gi,
+                                css: /link\(.*href=['"]([^'"]+)/gi
+                            },
+                            replace: {
+                                js: function(filePath){
+                                    var fileName = filePath.substring(filePath.lastIndexOf('/')+1);
+                                    var wpHandle = fileName.replace(".","-");
+                                    return "wp_enqueue_script('"+wpHandle+"', get_stylesheet_directory_uri() . '/"+filePath+"');";
+                                },
+                                css: function(filePath){
+                                    var fileName = filePath.substring(filePath.lastIndexOf('/')+1);
+                                    var wpHandle = fileName.replace(".","-");
+                                    return "wp_enqueue_style('"+wpHandle+"', get_stylesheet_directory_uri() . '/"+filePath+"');";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
 
         // To use TinyPNG, get an API key from https://tinypng.com/developers
         tinypng: {
@@ -87,6 +122,13 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true,
                 }
+            },
+            bower: {
+                files: [ 'bower.json' ],
+                tasks: [ 'wiredep' ],
+                options: {
+                    livereload: true
+                }
             }
         },
         php: {
@@ -110,10 +152,11 @@ module.exports = function(grunt) {
         },
     });
 
-    // Compiles LESS/JS and checks for todos
+    // Compiles LESS/JS, wires dependencies, concats and hints
     grunt.registerTask('default', [
         'less',
         'autoprefixer',
+        'wiredep',
         'jshint',
         'uglify'
     ]);
