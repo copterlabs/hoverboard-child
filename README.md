@@ -23,6 +23,10 @@ Before you submit the issue, please search to make sure it doesn't already exist
 Changelog
 ---------
 
+### 1.1.2
+
+* Enabled LESS source maps and configured autoprefixr to work properly with them
+
 ### 1.1.1
 
 * Improved TGM plugin requirements to be more relevant
