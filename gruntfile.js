@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                 compress: true,
                 yuicompress: true,
                 optimization: 2,
-                // sourceMap: true,
+                sourceMap: true,
                 // sourceMapURL: theme_root + '/assets/css/main.min.css.map',
                 // sourceMapFilename: 'assets/css/main.min.css.map',
                 // sourceMapBasepath: 'assets/css/',
@@ -42,6 +42,9 @@ module.exports = function(grunt) {
             }
         },
         autoprefixer: {
+            options: {
+                map: true,
+            },
             main: {
                 src: 'assets/css/main.min.css',
             },
